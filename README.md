@@ -6,12 +6,12 @@ Paper, "Does Thermal data make the detection systems more reliable?" by Shruthi 
 
 ## Methodology
 
-####Architecture
+#### Architecture
 ```
 Detection Head : SSD
 Detection Backbone : Resnet (CNN-based) or DEiT (Transformer-based)
 ```
-####MMC framework
+#### MMC framework
 ![image info](./src/mmc.png)
 
 MMC framework has multiple versions
