@@ -1,4 +1,4 @@
-# MultiModal-Collaborative (MMC) for integrating RGB and Thermal modalities
+# MultiModal-Collaborative (MMC) Learning Framework for integrating RGB and Thermal spectral modalities
 
 
 This is the official code for NeurIPS 2021 Machine Learning for Autonomous Driving Workshop
