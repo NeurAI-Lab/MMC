@@ -1,0 +1,38 @@
+MODEL:
+  NUM_CLASSES: 81
+  BACKBONE:
+    NAME: 'deit_tiny_distilled_patch16_224'
+    OUT_CHANNELS: (192,192, 512, 512, 512, 512)
+    FEATURE_MAPS: [64,32, 16, 8, 4, 2]
+    UPSAMPLE: "Conv"
+  HEAD:
+    NAME: 'SSDBoxHead'
+  PRIORS:
+    STRIDES: [8, 16, 32, 64, 100, 300]
+    MIN_SIZES: [20.48, 51.2, 133.12, 215.04, 296.96, 378.88]
+    MAX_SIZES: [51.2, 133.12, 215.04, 296.96, 378.88, 460.8]
+    ASPECT_RATIOS: [[2], [2, 3], [2, 3], [2, 3], [2], [2]]
+    BOXES_PER_LOCATION: [4,6,6,6,4,4]
+INPUT:
+  IMAGE_SIZE: 512
+  STANDARDIZATION_MEAN: (0.485, 0.456, 0.406)
+  STANDARDIZATION_STDEV: (0.229, 0.224, 0.225)
+DATASETS:
+  TRAIN: ("flir_rgb_coco_train", )
+  TEST: ("flir_rgb_coco_test",) # "flir_thm_coco_test_sane", "flir_rgb_day_coco_test", "flir_rgb_night_coco_test")
+SCHEDULER:
+  TYPE : 'Transformer'
+SOLVER:
+  NAME : "Transformer"
+  LR: 5e-4
+  MAX_ITER: None
+  MAX_EPOCHS: 250
+  BATCH_SIZE: 8
+  WEIGHT_DECAY : 0.0
+KD:
+  ENABLE: True
+  ENABLE_DML: True
+  DISTILL_TYPE: ['L2']
+  LOSS_WEIGHTS: {'l2':2.0}
+
+OUTPUT_DIR: '/outputs/deit_tiny_ssd_teacher_1l2_wt'
