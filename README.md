@@ -66,20 +66,22 @@ KAIST : https://soonminhwang.github.io/rgbt-ped-detection/
 
 ## Running 
 
-####Train
+#### Train
 There are 2 networks, one receiving RGB images and one receiving thermal images. Both require different config files.
 
 ```
 python train.py --config-file <thermal-config-file> --teacher-config-file <rgb-config-file>
 ```
 
-####Test
+#### Test
 For evaluation only one network is used - the first network (RGB or Teacher network)
 ```
 python test.py --config-file <config-file> --ckpt <model_final.pth> 
 ```
 
-##Cite Our Work
+#### Model Checkpoints
+
+## Cite Our Work
 
 ## License
 
