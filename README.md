@@ -83,6 +83,18 @@ python test.py --config-file <config-file> --ckpt <model_final.pth>
 
 ## Cite Our Work
 
+If you find the code useful in your research, please consider citing our paper:
+
+<pre>
+@article{gowda2021does,
+  title={Does Thermal data make the detection systems more reliable?},
+  author={Gowda, Shruthi and Zonooz, Bahram and Arani, Elahe},
+  journal={arXiv e-prints},
+  pages={arXiv--2111},
+  year={2021}
+}
+</pre>
+
 ## License
 
 This project is licensed under the terms of the MIT license.
