@@ -4,10 +4,16 @@ import logging
 import os
 from datetime import datetime
 import numpy as np
-import sdk.src.utils as utils
 from od.utils.box_utils import plot_pred_gt
 import cv2
 from od.data.datasets.dataset_class_names import dataset_classes
+
+def get_class_names(dataset_type):
+    try:
+        class_names = dataset_classes[dataset_type]
+    except KeyError:
+        raise NotImplementedError(dataset_type + ' dataset not supported.')
+    return class_names
 
 def draw_detections(output_dir, dataset, coco_dt):
     for i in range(len(dataset.ids)):
@@ -168,7 +174,7 @@ def coco_evaluation(cfg, dataset, predictions, output_dir, iteration=None, lamr=
 
     if precision_display:
         # addition for precision display to display class wise AP, AR and F1
-        class_names = list(utils.get_class_names(dataset_type))
+        class_names = list(get_class_names(dataset_type))
         if not cfg.DATA_LOADER.INCLUDE_BACKGROUND:
             class_names.remove("__background__")
 
