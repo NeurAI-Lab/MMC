@@ -2,7 +2,7 @@
 
 
 This is the official code for NeurIPS 2021 Machine Learning for Autonomous Driving Workshop
-Paper, "Does Thermal data make the detection systems more reliable?" by Shruthi Gowda, Elahe Arani and Bahram Zonooz.
+Paper, ["Does Thermal data make the detection systems more reliable?"](https://arxiv.org/abs/2111.05191) by Shruthi Gowda, Elahe Arani and Bahram Zonooz.
 
 ## Methodology
 
